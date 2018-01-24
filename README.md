@@ -1,4 +1,4 @@
-# StudyForingWord
+# StudyForeignWord
 This program can help you in the study of foring word.
 
 Программа StudyForingWord, является помошником при изучении иностранного языка.
