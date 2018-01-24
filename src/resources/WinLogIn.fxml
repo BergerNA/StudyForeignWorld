@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#onKeyReleased" prefHeight="206.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controls.WinLogIn">
+   <children>
+      <HBox prefHeight="37.0" prefWidth="270.0">
+         <children>
+            <Label text="Login:">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="labelErrorUser" text="Can't find user" textFill="RED" visible="false">
+               <HBox.margin>
+                  <Insets left="3.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <TextField fx:id="tbLogin" onAction="#tbLogin_OnAction" promptText="Enter login">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="2.0" />
+         </VBox.margin>
+      </TextField>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="270.0">
+         <children>
+            <Label text="Password:">
+               <HBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="labelErrorPassword" text="Wrong password" textFill="RED" visible="false">
+               <HBox.margin>
+                  <Insets left="3.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <PasswordField fx:id="tbPassword" onAction="#tb_OnAction" promptText="Enter password">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </PasswordField>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="cbSaveEnter" mnemonicParsing="false" text="Save enter">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </CheckBox>
+         </children>
+      </VBox>
+      <HBox prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btCancel" mnemonicParsing="false" onAction="#btCancel_OnAction" prefHeight="25.0" prefWidth="60.0" text="Cancel">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btNew" mnemonicParsing="false" onAction="#btNew_OnAction" prefHeight="25.0" prefWidth="60.0" text="New">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btLogIn" mnemonicParsing="false" onAction="#btLoginIn_OnAction" prefHeight="25.0" prefWidth="60.0" text="Log In">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="30.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controls.WinMain">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#menu_New_OnAction" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TabPane cache="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="575.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Lessons">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="310.0" prefWidth="640.0">
+                     <children>
+                        <ListView fx:id="lvLessons" layoutX="6.0" layoutY="30.0" prefWidth="186.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="30.0" />
+                        <Button fx:id="btAddLesson" layoutX="146.0" layoutY="3.0" mnemonicParsing="false" onAction="#btAddLesson_OnAction" prefHeight="22.0" prefWidth="46.0" text="Add" />
+                        <TextField fx:id="tfAddLesson" layoutX="6.0" layoutY="3.0" prefHeight="25.0" prefWidth="139.0" promptText="Enter lesson name" />
+                        <TabPane layoutX="195.0" layoutY="-1.0" prefHeight="346.0" prefWidth="446.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                          <tabs>
+                            <Tab fx:id="tabWord" text="Word">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="511.0" prefWidth="606.0">
+                                       <children>
+                                          <TableView fx:id="wordTable" layoutY="32.0" prefHeight="484.0" prefWidth="405.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="32.0">
+                                            <columns>
+                                              <TableColumn fx:id="wordTableNum" prefWidth="39.0" text="№" />
+                                              <TableColumn fx:id="wordTableWord" prefWidth="123.0" sortType="DESCENDING" text="Слово" />
+                                                <TableColumn fx:id="wordTableTranslate" prefWidth="125.0" text="Перевод" />
+                                                <TableColumn fx:id="wordTableKnow" prefWidth="72.0" text="Знание" />
+                                                <TableColumn fx:id="wordTableSelect" prefWidth="37.0" text="Выбрать" />
+                                            </columns>
+                                          </TableView>
+                                          <VBox layoutX="405.0" layoutY="33.0" prefHeight="234.0" prefWidth="201.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
+                                             <children>
+                                                <Label text="Синоним:" textFill="#00000096">
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="6.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="wordSynonym" text="Label">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="1.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Антоним:" textFill="#00000096">
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="7.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="wordAntonym" text="Label">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" top="1.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Пример:" textFill="#00000096">
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="7.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <TextArea fx:id="wordExample" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                   <VBox.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                             </children>
+                                          </VBox>
+                                          <ToolBar layoutY="-2.0" prefHeight="25.0" prefWidth="610.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-2.0">
+                                            <items>
+                                                <Label text="Слово:" />
+                                                <Button fx:id="wordAdd" mnemonicParsing="false" onAction="#wordAdd_OnAction" prefHeight="25.0" prefWidth="62.0" text="Add" />
+                                                <Button fx:id="wordChange" mnemonicParsing="false" onAction="#wordChange_OnAction" prefHeight="25.0" prefWidth="62.0" text="Change" />
+                                                <Label text="Слова:" />
+                                                <Button fx:id="wordLevelKnowHi" mnemonicParsing="false" onAction="#wordLevelKnowHi_OnAction" prefHeight="25.0" prefWidth="62.0" text="Знаю" />
+                                                <Button fx:id="wordLevelKnowMidll" mnemonicParsing="false" onAction="#wordLevelKnowMidll_OnAction" prefHeight="25.0" prefWidth="68.0" text="Знакомо" />
+                                                <Button fx:id="wordLevelKnowLow" mnemonicParsing="false" onAction="#wordLevelKnowLow_OnAction" prefHeight="25.0" prefWidth="68.0" text="Не знаю" />
+                                                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                                                <Button fx:id="wordMove" mnemonicParsing="false" onAction="#wordMove_OnAction" prefHeight="25.0" prefWidth="74.0" text="Переместить" />
+                                                <Button fx:id="wordClear" mnemonicParsing="false" onAction="#wordClear_OnAction" prefHeight="25.0" prefWidth="92.0" text="Clear" />
+                                            </items>
+                                          </ToolBar>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Statisticks">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab text="Study">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Dictionary">
+            <content>
+              <AnchorPane blendMode="RED" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Statisticks">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <Blend mode="GREEN" />
+         </effect>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TabPane>
+  </children>
+</VBox>
